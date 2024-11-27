@@ -67,3 +67,14 @@ else:
         kilometer += (perc_alakitas(ora_perc_sebesseg[i][0], ora_perc_sebesseg[i][1]) -
                       perc_alakitas(ora_perc_sebesseg[i-1][0], ora_perc_sebesseg[i-1][1])) * ora_perc_sebesseg[i][-1] / 60
         print(f"{ora_perc_sebesseg[i][0]}:{ora_perc_sebesseg[i][1]} {round(kilometer, 1)} km")
+
+feladatok(7)
+
+rendszamok = []
+
+for auto in autok:
+    if auto[0] not in rendszamok:
+        rendszamok.append(auto[0])
+
+
+with open("ido.txt", "w", encoding="utf-8") as fajl:
