@@ -36,3 +36,15 @@ for auto in autok:
     if idopont_ora == auto[1] and idopont_perc == auto[2]:
         szamlalo += 1
 print(f"A jeladások száma: {szamlalo}")
+
+feladatok(5)
+sebesseg = [auto[-1] for auto in autok]
+gyors_jarmuvek = []
+for auto in autok:
+    if auto[-1] == max(sebesseg):
+        gyors_jarmuvek.append(auto[0])
+print(f"A legnagyobb sebesség km/h: {max(sebesseg)}")
+print(f"A járművek: ", end="")
+for i in range(len(gyors_jarmuvek)):
+    print(gyors_jarmuvek[i], end=" ")
+print("")
