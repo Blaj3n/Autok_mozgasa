@@ -11,3 +11,7 @@ with open("jeladas.txt", "r", encoding="utf-8") as file:
         autok.append([str(egysor[0]), int(egysor[1]),
                       int(egysor[2]), int(egysor[3])])
 print(autok)
+
+feladatok(2)
+
+print(f"Az utolsó jeladás időpontja {autok[-1][1]}:{autok[-1][2]}, a jármű rendszáma {autok[-1][0]}")
