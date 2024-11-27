@@ -26,3 +26,13 @@ for auto in autok:
     if elso_jarmu == auto[0]:
         print(f"{auto[1]}:{auto[2]}", end=" ")
 print()
+
+feladatok(4)
+
+idopont_ora = 6     #int(input("Kérem, adja meg az órát: "))
+idopont_perc = 54   #int(input("Kérem, adja meg az percet: "))
+szamlalo = 0
+for auto in autok:
+    if idopont_ora == auto[1] and idopont_perc == auto[2]:
+        szamlalo += 1
+print(f"A jeladások száma: {szamlalo}")
