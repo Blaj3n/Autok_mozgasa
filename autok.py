@@ -48,3 +48,22 @@ print(f"A járművek: ", end="")
 for i in range(len(gyors_jarmuvek)):
     print(gyors_jarmuvek[i], end=" ")
 print("")
+
+feladatok(6)
+
+
+def perc_alakitas(ora:int, perc:int):
+    return ora * 60 + perc
+
+
+jarmu_rendszam = "ZVJ-638" #input("Kérem, adja meg a rendszámot: ")
+if jarmu_rendszam not in [egyelem[0] for egyelem in autok]:
+    print("Nem szerepel ilyen rendszám! ")
+else:
+    ora_perc_sebesseg = [[auto[1], auto[2], auto[-1]] for auto in autok if auto[0] == jarmu_rendszam]
+    print(f"{ora_perc_sebesseg[0][0]}:{ora_perc_sebesseg[0][1]} 0.0 km ")
+    kilometer = 0
+    for i in range(1, len(ora_perc_sebesseg)):
+        kilometer += (perc_alakitas(ora_perc_sebesseg[i][0], ora_perc_sebesseg[i][1]) -
+                      perc_alakitas(ora_perc_sebesseg[i-1][0], ora_perc_sebesseg[i-1][1])) * ora_perc_sebesseg[i][-1] / 60
+        print(f"{ora_perc_sebesseg[i][0]}:{ora_perc_sebesseg[i][1]} {round(kilometer, 1)} km")
